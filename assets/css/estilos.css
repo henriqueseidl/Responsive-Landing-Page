@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    font-size: 62.5%;
+    color: #fff;
+}
+
+.back {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+.back button {
+    position: fixed; 
+    background-color: #ffffff;
+    color: #9a25d1;
+    font-size: 2rem;
+    right: 40px;
+    bottom: 40px;
+    padding: 0.5rem 1rem;
+    border-radius: 80px;
+}
+
+.bganimated--purple {
+    background: linear-gradient(-45deg, #b300db, #35014a, #9a25d1, #2b004c);
+    background-size: 400% 400%; /* Large size lets the gradient "move" */
+    animation: gradient 15s ease infinite;
+}
+
+.bganimated--black {
+    background: linear-gradient(-45deg, #000000, #535353, #000000, #414141);
+    background-size: 400% 400%; /* Large size lets the gradient "move" */
+    animation: gradient 15s ease infinite;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 20vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.header img {
+    height: auto;
+    max-width: 12rem;
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 20px;
+    display: block;
+    font-size: 2em;
+    background-color: #f9f9f9;
+    color: #35014a;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 0.6rem;
+}
+
+.desktop-nav {
+    display: none;
+}
+
+.nav {
+    display: none;
+    flex-direction: column;
+    font-size: 1rem;
+    position: fixed;
+    top: 1px;
+    right: 0.1rem;
+    width: 200px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    color: #2b004c;
+    z-index: 999;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li {
+    margin: 1rem 0;
+}
+
+.nav ul li a {
+    text-decoration: none;
+}
+
+.nav.active {
+    display: flex;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 2;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.welcome img {
+    max-height: 20rem;
+    max-width: 100%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.container {
+    display: block;
+    margin: 0 1rem 2rem 1rem;
+    max-width: 1200px;
+}
+
+.container h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.container p {
+    font-size: 1.7em;
+}
+
+.container p a {
+    color: #fff;
+    font-size: 1.8em;
+}
+
+.aboutus {
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.aboutus ul {
+    font-size: 1.1rem;
+    margin: 1em 0 0 1em;
+}
+
+.servicesBus {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 1.3rem;
+    margin: 0 0.5rem;
+    max-width: 120rem;
+}
+
+.services h2 {
+    grid-column: span 2;
+    justify-self: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.services h3 {
+    color: #d627fd;
+    font-weight: bold;
+}
+
+.comments {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.block {
+    display: block;
+}
+
+.block h3 {
+    font-size: 2rem;
+    justify-self: center;
+    margin: 5rem 0 0 0;
+}
+
+.comment-grid {
+    margin: 5rem 0;
+}
+
+.comment-grid img {
+    height: 2rem;
+    width: auto;
+}
+
+.comment {
+    display: flex;
+}
+
+.comment-text {
+    grid-column: span 2;
+    grid-column-start: 2;
+}
+
+.profile .job {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    color: #878787;
+    font-size: 0.7rem;
+}
+
+.profile {
+    background-color: #f9f9f9;
+    width: 100%;
+    color: #000000;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    border-radius: 20px;
+    padding: 10px 5px;
+    margin: 0.5rem 0;
+}
+
+.profile img {
+    grid-row: span 2;
+}
+
+.profile p {
+    font-size: 1rem;
+}
+
+.stars {
+    color: goldenrod;
+    font-size: 1rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact h3 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.contact .block {
+    display: block;
+    width: min(100%, 1200px);
+}
+
+.form {
+    padding: 0 16px;
+    width: 100%;
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+.form-grid label {
+    display: block;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: min(100%, 1200px);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field input, .field textarea  {
+    width: 100%;
+    padding: 12px;
+}
+
+.button button {
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    background-color: #b700d7;
+    color: #f9f9f9;transition: all 150ms ease-in-out;
+}
+
+.button button:hover {
+    transform: scale(1.1);
+    background-color: #f9f9f9;
+    color: #b700d7;
+    cursor: pointer;
+}
+
+@media (min-width: 600px){
+
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .full-width {
+        grid-column: span 2;
+    }
+
+    .back button {
+        padding: 0.3rem 2rem;
+        font-size: 4rem;
+    }
+}
+@media (min-width: 853px) {
+    .header .desktop-nav {
+        display: inline;
+    }
+
+    .menu-toggle{
+        display: none;
+    }
+
+    .header .desktop-nav {
+        list-style: none; 
+        display: flex;
+        gap: 70px;
+        margin-right: 70px;
+    }
+
+    .header .desktop-nav li a {
+        position: relative;
+        padding-bottom: 4px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.6rem;
+    }
+    .header .desktop-nav li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #d627fd;
+        transition: width 300ms ease;
+    }
+    .header ul li a:hover::after {
+        width: 100%;
+    }
+    .welcome-grid {
+        grid-template-columns: 2 !important;
+    }
+    .welcome {
+        flex-flow: row nowrap;
+    }
+    .welcome img {
+        grid-column-start: 2 !important;
+    }
+}

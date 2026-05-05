@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência Criativa</title>
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+    <div class="bganimated--purple">
+        <header id="header" class="header">
+            <div><img src="assets/img/logo-media.png" srcset=
+                "assets/img/logo-menor.png 139w,
+                 assets/img/logo-media.png 177w,
+                 assets/img/logo.png 264w" sizes="
+                 (max-width: 600px) 50vw,
+                 (max-width: 900px) 30vw,
+                 20vw" alt="Logo da Agência"></div>
+            <div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#aboutus">Sobre</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#comments">Depoimentos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul class="desktop-nav">
+                        <li><a href="#aboutus">Sobre</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#comments">Depoimentos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+
+        <script>
+            const toggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector(".nav")
+
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("active")
+                toggle.textContent = "X"
+
+                if (!nav.classList.contains("active")) toggle.textContent = "☰"
+            });
+        </script>
+
+        <div class="back"><a class="back-to-top" href="#header"><button>&uparrow;</button></a></div>
+
+        <section id="home" class="home">
+            <div class="container">
+                <h1>BEM-VINDO(A)</h1>
+                <div class="welcome-grid">
+                    <div class="welcome">
+                        <p>Nós, da Criativa Web, estamos muito felizes em contar com a sua presença! Atuando desde 2015 no mercado digital, não vendemos apenas sites. <br>
+                            Nosso foco é impulsionar seu alcance e suas vendas através de um design elegante, moderno e atrativo. Conheça o nosso trabalho <a href="#aboutus"><strong>abaixo</strong></a></p>
+
+                        <img src="assets/img/undraw_welcome-cats_tw36.svg" alt="welcome ilustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <section id="aboutus" class="aboutus bganimated--black">
+        <div class="container">
+            <h1>Sobre Nós</h1>
+            <p>A Agência Criativa Web é especializada em Web-Design e atua no mercado brasileiro há 11 anos.</p>
+            <p>Nossos Valores: </p>
+            <ul>
+                <li>Criatividade com Propósito  &#10004;</li>
+                <li>Design Centrado no Usuário  &#10004;</li>
+                <li>Inovação Constante  &#10004;</li>
+                <li>Atenção aos Detalhes  &#10004;</li>
+                <li>Qualidade Acima do Básico  &#10004;</li>
+                <li>Soluções sob medida  &#10004;</li>
+                <li>Beleza com Estratégia  &#10004;</li>
+                <li>Acessibilidade digital  &#10004;</li>
+                <li>Paixão por Tecnologia e Estética  &#10004;</li>
+                <li>Respeito a prazos  &#10004;</li>
+                <li>Adaptabilidade  &#10004;</li>
+                <li>Design que Vende e Comunica  &#10004;</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="services" class="servicesBus bganimated--purple">
+        <div class="services">
+            <h2>Serviços</h2>
+            <div>
+                <h3>Desenvolvimento Web</h3>
+                <p>Para aumentar o seu alcance.</p>
+            </div>
+            <div>
+                <h3>Web Design</h3>
+                <p>Para aumentar as suas vendas, clientela e virar referência no assunto!</p>
+            </div>
+            <div>
+                <h3>Hospedagem</h3>
+                <p>Contratamos a sua hospedagem para que você não lide com burocracias.</p>
+            </div>
+            <div>
+                <h3>Branding</h3>
+                <p>Para valorizar a sua marca!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="comments" class="bganimated--black">
+        <div class="comments">
+            <div class="block">
+                <h3>Depoimentos</h3>
+
+                <div class="comment-grid">
+                    <div class="comment">
+                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>João Fonseca</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="job">CEO da Google Enterprises</p>
+                            <p class="comment-text">Muito prestativo, adorei o design!</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>Júlia Navares</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="job">Designer da Ultimate Team</p>
+                            <p class="comment-text">Trabalho magnífico, vou recomendar!</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>Pedro da Silva</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="job">Engenheiro da SoftwareTech</p>
+                            <p class="comment-text">Muito barato, adorei!</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>Marcos Alves</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="job">CEO do Facebook</p>
+                            <p class="comment-text">Simples e elegante. 10/10.</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>Gabriela dos Anjos</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="job">Desenvolvedora de Software</p>
+                            <p class="comment-text">Me ajudou demais!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact bganimated--purple">
+        <div class="block">
+            <h3>Contato</h3>
+            <form class="form">
+                <div class="form-grid">
+                    <div class="name field">
+                        <label for="name">Nome: </label>
+                        <input type="text" name="name" id="name">
+                    </div>
+
+                    <div class="email field">
+                        <label for="email">Email: </label>
+                        <input type="text" name="email" id="email">
+                    </div>
+
+                    <div class="message field full-width">
+                        <label for="message">Mensagem: </label>
+                        <textarea type="text" name="message" id="message" rows="8"></textarea>
+                    </div>
+                    <div class="button">
+                        <button>ENVIAR</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
