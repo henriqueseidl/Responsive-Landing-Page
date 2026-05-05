@@ -9,7 +9,7 @@
 <body>
     <div class="bganimated--purple">
         <header id="header" class="header">
-            <div><img src="assets/img/logo-media.png" srcset=
+            <div><img class="header__img" src="assets/img/logo-media.png" srcset=
                 "assets/img/logo-menor.png 139w,
                  assets/img/logo-media.png 177w,
                  assets/img/logo.png 264w" sizes="
@@ -17,20 +17,20 @@
                  (max-width: 900px) 30vw,
                  20vw" alt="Logo da Agência"></div>
             <div>
-                <nav class="nav">
-                    <ul>
-                        <li><a href="#aboutus">Sobre</a></li>
-                        <li><a href="#services">Serviços</a></li>
-                        <li><a href="#comments">Depoimentos</a></li>
-                        <li><a href="#contact">Contato</a></li>
+                <nav class="mobile-nav">
+                    <ul class="mobile-nav__list">
+                        <li class="mobile-nav__item"><a class="mobile-nav__link" href="#about-us">Sobre</a></li>
+                        <li class="mobile-nav__item"><a class="mobile-nav__link" href="#services">Serviços</a></li>
+                        <li class="mobile-nav__item"><a class="mobile-nav__link" href="#comments">Depoimentos</a></li>
+                        <li class="mobile-nav__item"><a class="mobile-nav__link" href="#contact">Contato</a></li>
                     </ul>
                 </nav>
-                <nav>
-                    <ul class="desktop-nav">
-                        <li><a href="#aboutus">Sobre</a></li>
-                        <li><a href="#services">Serviços</a></li>
-                        <li><a href="#comments">Depoimentos</a></li>
-                        <li><a href="#contact">Contato</a></li>
+                <nav class="desktop-nav">
+                    <ul class="desktop-nav__list">
+                        <li class="desktop-nav__item"><a class="desktop-nav__link" href="#about-us">Sobre</a></li>
+                        <li class="desktop-nav__item"><a class="desktop-nav__link" href="#services">Serviços</a></li>
+                        <li class="desktop-nav__item"><a class="desktop-nav__link" href="#comments">Depoimentos</a></li>
+                        <li class="desktop-nav__item"><a class="desktop-nav__link" href="#contact">Contato</a></li>
                     </ul>
                 </nav>
             </div>
@@ -40,27 +40,31 @@
 
         <script>
             const toggle = document.querySelector(".menu-toggle");
-            const nav = document.querySelector(".nav")
+            const nav = document.querySelector(".mobile-nav")
 
             toggle.addEventListener("click", () => {
                 nav.classList.toggle("active")
                 toggle.textContent = "X"
+                toggle.style.color = "#000000"
 
-                if (!nav.classList.contains("active")) toggle.textContent = "☰"
+                if (!nav.classList.contains("active")) {
+                    toggle.textContent = "☰"
+                    toggle.style.color = "#f9f9f9"
+                }
             });
         </script>
 
-        <div class="back"><a class="back-to-top" href="#header"><button>&uparrow;</button></a></div>
+        <button class="back-to-top__button"><a class="back-to-top__link" href="#header">&uparrow;</a></button> 
 
         <section id="home" class="home">
-            <div class="container">
-                <h1>BEM-VINDO(A)</h1>
-                <div class="welcome-grid">
-                    <div class="welcome">
-                        <p>Nós, da Criativa Web, estamos muito felizes em contar com a sua presença! Atuando desde 2015 no mercado digital, não vendemos apenas sites. <br>
-                            Nosso foco é impulsionar seu alcance e suas vendas através de um design elegante, moderno e atrativo. Conheça o nosso trabalho <a href="#aboutus"><strong>abaixo</strong></a></p>
+            <div class="welcome__container container">
+                <h1 class="welcome__title">BEM-VINDO(A)</h1>
+                <div class="welcome__grid">
+                    <div class="welcome__items">
+                        <p class="welcome__text">Nós, da Criativa Web, estamos muito felizes em contar com a sua presença! Atuando desde 2015 no mercado digital, não vendemos apenas sites. <br>
+                            Nosso foco é impulsionar seu alcance e suas vendas através de um design elegante, moderno e atrativo. Conheça o nosso trabalho <a class="welcome__link" href="#aboutus"><strong>abaixo</strong></a></p>
 
-                        <img src="assets/img/undraw_welcome-cats_tw36.svg" alt="welcome ilustration">
+                        <img class="welcome__img" src="assets/img/undraw_welcome-cats_tw36.svg" alt="welcome ilustration">
                     </div>
                 </div>
             </div>
@@ -68,84 +72,84 @@
         
     </div>
 
-    <section id="aboutus" class="aboutus bganimated--black">
-        <div class="container">
-            <h1>Sobre Nós</h1>
-            <p>A Agência Criativa Web é especializada em Web-Design e atua no mercado brasileiro há 11 anos.</p>
-            <p>Nossos Valores: </p>
-            <ul>
-                <li>Criatividade com Propósito  &#10004;</li>
-                <li>Design Centrado no Usuário  &#10004;</li>
-                <li>Inovação Constante  &#10004;</li>
-                <li>Atenção aos Detalhes  &#10004;</li>
-                <li>Qualidade Acima do Básico  &#10004;</li>
-                <li>Soluções sob medida  &#10004;</li>
-                <li>Beleza com Estratégia  &#10004;</li>
-                <li>Acessibilidade digital  &#10004;</li>
-                <li>Paixão por Tecnologia e Estética  &#10004;</li>
-                <li>Respeito a prazos  &#10004;</li>
-                <li>Adaptabilidade  &#10004;</li>
-                <li>Design que Vende e Comunica  &#10004;</li>
+    <section id="about-us" class="about-us bganimated--black">
+        <div class="about-us__container">
+            <h1 class="about-us__title">Sobre Nós</h1>
+            <p class="about-us__text">A Agência Criativa Web é especializada em Web-Design e atua no mercado brasileiro há 11 anos.</p>
+            <p class="about-us__text">Nossos Valores: </p>
+            <ul class="about-us__list">
+                <li class="about-us__item">Criatividade com Propósito  &#10004;</li>
+                <li class="about-us__item">Design Centrado no Usuário  &#10004;</li>
+                <li class="about-us__item">Inovação Constante  &#10004;</li>
+                <li class="about-us__item">Atenção aos Detalhes  &#10004;</li>
+                <li class="about-us__item">Qualidade Acima do Básico  &#10004;</li>
+                <li class="about-us__item">Soluções sob medida  &#10004;</li>
+                <li class="about-us__item">Beleza com Estratégia  &#10004;</li>
+                <li class="about-us__item">Acessibilidade digital  &#10004;</li>
+                <li class="about-us__item">Paixão por Tecnologia e Estética  &#10004;</li>
+                <li class="about-us__item">Respeito a prazos  &#10004;</li>
+                <li class="about-us__item">Adaptabilidade  &#10004;</li>
+                <li class="about-us__item">Design que Vende e Comunica  &#10004;</li>
             </ul>
         </div>
     </section>
 
-    <section id="services" class="servicesBus bganimated--purple">
-        <div class="services">
-            <h2>Serviços</h2>
-            <div>
-                <h3>Desenvolvimento Web</h3>
-                <p>Para aumentar o seu alcance.</p>
+    <section id="services" class="services bganimated--purple">
+        <div class="services__grid">
+            <h2 class="services__title">Serviços</h2>
+            <div class="services__item">
+                <h3 class="services-item__title">Desenvolvimento Web</h3>
+                <p class="services-item__text">Para aumentar o seu alcance.</p>
             </div>
-            <div>
-                <h3>Web Design</h3>
-                <p>Para aumentar as suas vendas, clientela e virar referência no assunto!</p>
+            <div class="services__item">
+                <h3 class="services-item__title">Web Design</h3>
+                <p class="services-item__text">Para aumentar as suas vendas, clientela e virar referência no assunto!</p>
             </div>
-            <div>
-                <h3>Hospedagem</h3>
-                <p>Contratamos a sua hospedagem para que você não lide com burocracias.</p>
+            <div class="services__item">
+                <h3 class="services-item__title">Hospedagem</h3>
+                <p class="services-item__text">Contratamos a sua hospedagem para que você não lide com burocracias.</p>
             </div>
-            <div>
-                <h3>Branding</h3>
-                <p>Para valorizar a sua marca!</p>
+            <div class="services__item">
+                <h3 class="services-item__title">Branding</h3>
+                <p class="services-item__text">Para valorizar a sua marca!</p>
             </div>
         </div>
     </section>
 
     <section id="comments" class="bganimated--black">
         <div class="comments">
-            <div class="block">
-                <h3>Depoimentos</h3>
+            <div class="comments__display--block">
+                <h3 class="comments__title">Depoimentos</h3>
 
-                <div class="comment-grid">
-                    <div class="comment">
-                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>João Fonseca</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="job">CEO da Google Enterprises</p>
-                            <p class="comment-text">Muito prestativo, adorei o design!</p>
+                <div class="comments__grid">
+                    <div class="comments__comment">
+                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">João Fonseca</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="comments-comment_job">CEO da Google Enterprises</p>
+                            <p class="comments-comment__text">Muito prestativo, adorei o design!</p>
                         </div>
                     </div>
-                    <div class="comment">
-                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>Júlia Navares</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="job">Designer da Ultimate Team</p>
-                            <p class="comment-text">Trabalho magnífico, vou recomendar!</p>
+                    <div class="comments__comment">
+                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">Júlia Navares</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="comments-comment_job">Designer da Ultimate Team</p>
+                            <p class="comments-comment__text">Trabalho magnífico, vou recomendar!</p>
                         </div>
                     </div>
-                    <div class="comment">
-                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>Pedro da Silva</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="job">Engenheiro da SoftwareTech</p>
-                            <p class="comment-text">Muito barato, adorei!</p>
+                    <div class="comments__comment">
+                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">Pedro da Silva</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="comments-comment_job">Engenheiro da SoftwareTech</p>
+                            <p class="comments-comment__text">Muito barato, adorei!</p>
                         </div>
                     </div>
-                    <div class="comment">
-                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>Marcos Alves</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="job">CEO do Facebook</p>
-                            <p class="comment-text">Simples e elegante. 10/10.</p>
+                    <div class="comments__comment">
+                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">Marcos Alves</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="comments-comment_job">CEO do Facebook</p>
+                            <p class="comments-comment__text">Simples e elegante. 10/10.</p>
                         </div>
                     </div>
-                    <div class="comment">
-                        <div class="profile"><img src="assets/img/avatar-imgR.png" alt="avatar"><p>Gabriela dos Anjos</p> <div class="stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="job">Desenvolvedora de Software</p>
-                            <p class="comment-text">Me ajudou demais!</p>
+                    <div class="comments__comment">
+                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">Gabriela dos Anjos</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
+                            <p class="comments-comment_job">Desenvolvedora de Software</p>
+                            <p class="comments-comment__text">Me ajudou demais!</p>
                         </div>
                     </div>
                 </div>
@@ -154,26 +158,26 @@
     </section>
 
     <section id="contact" class="contact bganimated--purple">
-        <div class="block">
-            <h3>Contato</h3>
-            <form class="form">
-                <div class="form-grid">
-                    <div class="name field">
-                        <label for="name">Nome: </label>
-                        <input type="text" name="name" id="name">
+        <div class="contact__display-block">
+            <h3 class="contact__title">Contato</h3>
+            <form class="contact__form">
+                <div class="contact-form__grid">
+                    <div class="contact__field name">
+                        <label class="contact__label" for="name">Nome: </label>
+                        <input class="contact__input" type="text" name="name" id="name">
                     </div>
 
-                    <div class="email field">
-                        <label for="email">Email: </label>
-                        <input type="text" name="email" id="email">
+                    <div class="contact__field email">
+                        <label class="contact__label" for="email">Email: </label>
+                        <input class="contact__input" type="text" name="email" id="email">
                     </div>
 
-                    <div class="message field full-width">
-                        <label for="message">Mensagem: </label>
-                        <textarea type="text" name="message" id="message" rows="8"></textarea>
+                    <div class="contact__field message  full-width">
+                        <label class="contact__label" for="message">Mensagem: </label>
+                        <textarea class="contact__input" type="text" name="message" id="message" rows="8"></textarea>
                     </div>
-                    <div class="button">
-                        <button>ENVIAR</button>
+                    <div class="contact-submit__button">
+                        <button class="contact__button">ENVIAR</button>
                     </div>
                 </div>
             </form>

@@ -16,14 +16,7 @@ body {
     color: #fff;
 }
 
-.back {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    z-index: 2;
-}
-
-.back button {
+.back-to-top__button {
     position: fixed; 
     background-color: #ffffff;
     color: #9a25d1;
@@ -32,6 +25,10 @@ body {
     bottom: 40px;
     padding: 0.5rem 1rem;
     border-radius: 80px;
+}
+
+.back-to-top__link {
+    padding: 0.2rem;
 }
 
 .bganimated--purple {
@@ -56,7 +53,7 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.header img {
+.header-img {
     height: auto;
     max-width: 12rem;
 }
@@ -67,8 +64,8 @@ body {
     right: 20px;
     display: block;
     font-size: 2em;
-    background-color: #f9f9f9;
-    color: #35014a;
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
     cursor: pointer;
     z-index: 1000;
     padding: 0.6rem;
@@ -78,7 +75,7 @@ body {
     display: none;
 }
 
-.nav {
+.mobile-nav {
     display: none;
     flex-direction: column;
     font-size: 1rem;
@@ -88,42 +85,24 @@ body {
     width: 200px;
     padding: 1rem;
     background-color: #f9f9f9;
-    color: #2b004c;
+    color: #000000;
     z-index: 999;
 }
 
-.nav ul {
+.mobile-nav__list {
     list-style: none;
 }
 
-.nav ul li {
+.mobile-nav__item {
     margin: 1rem 0;
 }
 
-.nav ul li a {
+.mobile-nav__link {
     text-decoration: none;
 }
 
-.nav.active {
+.mobile-nav.active {
     display: flex;
-}
-
-.welcome-grid {
-    display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: 2;
-}
-
-.welcome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-}
-
-.welcome img {
-    max-height: 20rem;
-    max-width: 100%;
 }
 
 .home {
@@ -133,46 +112,80 @@ body {
     height: 80vh;
 }
 
-.container {
+.welcome__title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.welcome__grid {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 2;
+}
+
+.welcome__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.welcome__img {
+    max-height: 20rem;
+    max-width: 100%;
+}
+
+.welcome__container {
     display: block;
     margin: 0 1rem 2rem 1rem;
     max-width: 1200px;
 }
 
-.container h1 {
-    font-size: 4rem;
+.welcome__text {
+    font-size: 1.7em;
     margin-bottom: 2rem;
 }
 
-.container p {
-    font-size: 1.7em;
-}
-
-.container p a {
+.welcome__link {
     color: #fff;
     font-size: 1.8em;
 }
 
-.aboutus {
+.about-us {
     height: 100vh;
     justify-content: center;
     display: flex;
     align-items: center;
 }
 
-.aboutus ul {
-    font-size: 1.1rem;
-    margin: 1em 0 0 1em;
+.about-us__container {
+    margin: 0 2rem 0 2rem;
 }
 
-.servicesBus {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.about-us__title {
+    font-size: 2.5rem;
+}
+
+.about-us__text {
+    font-size: 1rem;
+}
+
+.about-us__list {
+    margin: 1rem 0 0 1rem;
+}
+
+.about-us__item {
+    font-size: 1rem;
 }
 
 .services {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services__grid {
     display: grid;
     grid-template-columns: 50% 50%;
     font-size: 1.3rem;
@@ -180,14 +193,14 @@ body {
     max-width: 120rem;
 }
 
-.services h2 {
+.services__title {
     grid-column: span 2;
     justify-self: center;
     font-size: 3rem;
     margin-bottom: 2rem;
 }
 
-.services h3 {
+.services-item__title {
     color: #d627fd;
     font-weight: bold;
 }
@@ -199,42 +212,48 @@ body {
     width: 100%;
 }
 
-.block {
+.comments__display--block {
     display: block;
 }
 
-.block h3 {
+.comments__title {
     font-size: 2rem;
     justify-self: center;
     margin: 5rem 0 0 0;
 }
 
-.comment-grid {
+.comments__grid {
     margin: 5rem 0;
 }
 
-.comment-grid img {
+.comments-comment__img {
     height: 2rem;
     width: auto;
+    grid-row: span 2;
 }
 
-.comment {
+.comments__comment {
     display: flex;
 }
 
-.comment-text {
+.comment-profile__name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.comments-comment__text {
     grid-column: span 2;
     grid-column-start: 2;
 }
 
-.profile .job {
+.comments-comment_job {
     grid-row-start: 2;
     grid-column-start: 2;
     color: #878787;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
-.profile {
+.comments-comment__profile {
     background-color: #f9f9f9;
     width: 100%;
     color: #000000;
@@ -246,15 +265,11 @@ body {
     margin: 0.5rem 0;
 }
 
-.profile img {
-    grid-row: span 2;
-}
-
-.profile p {
+.comments-comment__text {
     font-size: 1rem;
 }
 
-.stars {
+.comments-comment__stars {
     color: goldenrod;
     font-size: 1rem;
 }
@@ -266,28 +281,29 @@ body {
     height: 100vh;
 }
 
-.contact h3 {
+.contact__title {
     font-size: 3rem;
+    margin-left: 2rem;
     margin-bottom: 2rem;
 }
 
-.contact .block {
+.contact__display-block {
     display: block;
     width: min(100%, 1200px);
 }
 
-.form {
+.contact__form {
     padding: 0 16px;
     width: 100%;
     font-size: 1.2rem;
     justify-content: center;
 }
 
-.form-grid label {
+.contact__label {
     display: block;
 }
 
-.form-grid {
+.contact-form__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
@@ -296,24 +312,24 @@ body {
     margin: 0 auto;
 }
 
-.field {
+.contact__field {
     display: flex;
     flex-direction: column;
 }
 
-.field input, .field textarea  {
+.contact__input {
     width: 100%;
     padding: 12px;
 }
 
-.button button {
+.contact__button {
     padding: 1rem 2rem;
     border-radius: 20px;
     background-color: #b700d7;
     color: #f9f9f9;transition: all 150ms ease-in-out;
 }
 
-.button button:hover {
+.contact__button:hover {
     transform: scale(1.1);
     background-color: #f9f9f9;
     color: #b700d7;
@@ -321,44 +337,107 @@ body {
 }
 
 @media (min-width: 600px){
+    .welcome__title {
+        font-size: 4rem;
+    }
 
-    .form-grid {
+    .welcome__text {
+        font-size: 1.7rem;
+    }
+
+    .mobile-nav__link {
+        font-size: 2rem;
+        color: #000000;
+    }
+
+    .about-us__title {
+        font-size: 4.5rem;
+    }
+
+    .about-us__text {
+        font-size: 1.7rem;
+        margin: 1rem 0;
+    }
+
+    .about-us__item {
+        font-size: 1.3rem;
+    }
+
+    .services__title {
+        font-size: 3.5rem;
+    }
+
+    .services-item__title {
+        font-size: 2.3rem;
+    }
+
+    .services-item__text {
+        font-size: 1.7rem;
+    }
+
+    .comments-comment__img {
+        height: 4rem;
+    }
+
+    .comment-profile__name {
+        font-size: 1.5rem;
+    }
+
+    .comments-comment_job {
+        font-size: 1rem;
+    }
+
+    .comments-comment__text {
+        font-size: 1.2rem;
+    }
+
+    .comments-comment__stars {
+        font-size: 1.5rem;
+    }
+
+    .contact-form__grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact__label {
+        font-size: 2rem;
     }
 
     .full-width {
         grid-column: span 2;
     }
 
-    .back button {
+    .back-to-top__button {
         padding: 0.3rem 2rem;
         font-size: 4rem;
     }
 }
-@media (min-width: 853px) {
-    .header .desktop-nav {
-        display: inline;
-    }
-
-    .menu-toggle{
+@media (min-width: 855px) {
+    .menu-toggle, .mobile-nav {
         display: none;
     }
 
-    .header .desktop-nav {
+    .desktop-nav {
+        display: flex;
+    }
+
+    .desktop-nav__list {
+        display: inline;
         list-style: none; 
         display: flex;
         gap: 70px;
         margin-right: 70px;
     }
 
-    .header .desktop-nav li a {
+    .desktop-nav__link {
         position: relative;
         padding-bottom: 4px;
         text-decoration: none;
         color: #fff;
         font-size: 1.6rem;
     }
-    .header .desktop-nav li a::after {
+
+    .desktop-nav__link::after {
         content: "";
         position: absolute;
         left: 0;
@@ -368,16 +447,20 @@ body {
         background-color: #d627fd;
         transition: width 300ms ease;
     }
-    .header ul li a:hover::after {
+
+    .desktop-nav__link:hover::after {
         width: 100%;
     }
-    .welcome-grid {
-        grid-template-columns: 2 !important;
+
+    .welcome__grid {
+        grid-template-columns: 2;
     }
-    .welcome {
+
+    .welcome__items {
         flex-flow: row nowrap;
     }
-    .welcome img {
-        grid-column-start: 2 !important;
+
+    .welcome__img {
+        grid-column-start: 2;
     }
 }
