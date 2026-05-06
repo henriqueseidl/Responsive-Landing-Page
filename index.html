@@ -7,7 +7,23 @@
     <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
-    <div class="bganimated--purple">
+    <script>
+        const toggle = document.querySelector(".header__menu-toggle");
+        const nav = document.querySelector(".header__nav--mobile")
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active")
+            toggle.textContent = "X"
+            toggle.style.color = "#000000"
+
+            if (!nav.classList.contains("active")) {
+                toggle.textContent = "☰"
+                toggle.style.color = "#f9f9f9"
+            }
+        });
+    </script>
+    
+    <div class="background background--purple">
         <header id="header" class="header">
             <div><img class="header__img" src="assets/img/logo-media.png" srcset=
                 "assets/img/logo-menor.png 139w,
@@ -17,52 +33,37 @@
                  (max-width: 900px) 30vw,
                  20vw" alt="Logo da Agência"></div>
             <div>
-                <nav class="mobile-nav">
-                    <ul class="mobile-nav__list">
-                        <li class="mobile-nav__item"><a class="mobile-nav__link" href="#about-us">Sobre</a></li>
-                        <li class="mobile-nav__item"><a class="mobile-nav__link" href="#services">Serviços</a></li>
-                        <li class="mobile-nav__item"><a class="mobile-nav__link" href="#comments">Depoimentos</a></li>
-                        <li class="mobile-nav__item"><a class="mobile-nav__link" href="#contact">Contato</a></li>
+                <nav class="header__nav header__nav--mobile">
+                    <ul class="header__list header__list--mobile">
+                        <li class="header__item header__item--mobile"><a class="header__link header__link--mobile" href="#about-us">Sobre</a></li>
+                        <li class="header__item header__item--mobile"><a class="header__link header__link--mobile" href="#services">Serviços</a></li>
+                        <li class="header__item header__item--mobile"><a class="header__link header__link--mobile" href="#comments">Depoimentos</a></li>
+                        <li class="header__item header__item--mobile"><a class="header__link header__link--mobile" href="#contact">Contato</a></li>
                     </ul>
                 </nav>
-                <nav class="desktop-nav">
-                    <ul class="desktop-nav__list">
-                        <li class="desktop-nav__item"><a class="desktop-nav__link" href="#about-us">Sobre</a></li>
-                        <li class="desktop-nav__item"><a class="desktop-nav__link" href="#services">Serviços</a></li>
-                        <li class="desktop-nav__item"><a class="desktop-nav__link" href="#comments">Depoimentos</a></li>
-                        <li class="desktop-nav__item"><a class="desktop-nav__link" href="#contact">Contato</a></li>
+                <nav class="header__nav header__nav--desktop">
+                    <ul class="header__list header__list--desktop">
+                        <li class="header__item header__item--desktop"><a class="header__link header__link--desktop" href="#about-us">Sobre</a></li>
+                        <li class="header__item header__item--desktop"><a class="header__link header__link--desktop" href="#services">Serviços</a></li>
+                        <li class="header__item header__item--desktop"><a class="header__link header__link--desktop" href="#comments">Depoimentos</a></li>
+                        <li class="header__item header__item--desktop"><a class="header__link header__link--desktop" href="#contact">Contato</a></li>
                     </ul>
                 </nav>
             </div>
+
+            <button class="header__menu-toggle" aria-label="Abrir Menu">☰</button>
+
         </header>
-
-        <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
-
-        <script>
-            const toggle = document.querySelector(".menu-toggle");
-            const nav = document.querySelector(".mobile-nav")
-
-            toggle.addEventListener("click", () => {
-                nav.classList.toggle("active")
-                toggle.textContent = "X"
-                toggle.style.color = "#000000"
-
-                if (!nav.classList.contains("active")) {
-                    toggle.textContent = "☰"
-                    toggle.style.color = "#f9f9f9"
-                }
-            });
-        </script>
 
         <button class="back-to-top__button"><a class="back-to-top__link" href="#header">&uparrow;</a></button> 
 
-        <section id="home" class="home">
-            <div class="welcome__container container">
+        <section id="home" class="welcome">
+            <div class="welcome__container">
                 <h1 class="welcome__title">BEM-VINDO(A)</h1>
                 <div class="welcome__grid">
                     <div class="welcome__items">
                         <p class="welcome__text">Nós, da Criativa Web, estamos muito felizes em contar com a sua presença! Atuando desde 2015 no mercado digital, não vendemos apenas sites. <br>
-                            Nosso foco é impulsionar seu alcance e suas vendas através de um design elegante, moderno e atrativo. Conheça o nosso trabalho <a class="welcome__link" href="#aboutus"><strong>abaixo</strong></a></p>
+                            Nosso foco é impulsionar seu alcance e suas vendas através de um design elegante, moderno e atrativo. Conheça o nosso trabalho <a class="welcome__link" href="#about-us"><strong>abaixo</strong></a></p>
 
                         <img class="welcome__img" src="assets/img/undraw_welcome-cats_tw36.svg" alt="welcome ilustration">
                     </div>
@@ -72,7 +73,7 @@
         
     </div>
 
-    <section id="about-us" class="about-us bganimated--black">
+    <section id="about-us" class="about-us background background--black">
         <div class="about-us__container">
             <h1 class="about-us__title">Sobre Nós</h1>
             <p class="about-us__text">A Agência Criativa Web é especializada em Web-Design e atua no mercado brasileiro há 11 anos.</p>
@@ -94,91 +95,94 @@
         </div>
     </section>
 
-    <section id="services" class="services bganimated--purple">
+    <section id="services" class="services background background--purple">
         <div class="services__grid">
             <h2 class="services__title">Serviços</h2>
             <div class="services__item">
-                <h3 class="services-item__title">Desenvolvimento Web</h3>
-                <p class="services-item__text">Para aumentar o seu alcance.</p>
+                <h3 class="services__item-title">Desenvolvimento Web</h3>
+                <p class="services__item-text">Para aumentar o seu alcance.</p>
             </div>
             <div class="services__item">
-                <h3 class="services-item__title">Web Design</h3>
-                <p class="services-item__text">Para aumentar as suas vendas, clientela e virar referência no assunto!</p>
+                <h3 class="services__item-title">Web Design</h3>
+                <p class="services__item-text">Para aumentar as suas vendas, clientela e virar referência no assunto!</p>
             </div>
             <div class="services__item">
-                <h3 class="services-item__title">Hospedagem</h3>
-                <p class="services-item__text">Contratamos a sua hospedagem para que você não lide com burocracias.</p>
+                <h3 class="services__item-title">Hospedagem</h3>
+                <p class="services__item-text">Contratamos a sua hospedagem para que você não lide com burocracias.</p>
             </div>
             <div class="services__item">
-                <h3 class="services-item__title">Branding</h3>
-                <p class="services-item__text">Para valorizar a sua marca!</p>
+                <h3 class="services__item-title">Branding</h3>
+                <p class="services__item-text">Para valorizar a sua marca!</p>
             </div>
         </div>
     </section>
 
-    <section id="comments" class="bganimated--black">
-        <div class="comments">
-            <div class="comments__display--block">
-                <h3 class="comments__title">Depoimentos</h3>
+    <section id="comments" class="comments background background--black">
+        <div class="comments__container">
+            <h3 class="comments__title">Depoimentos</h3>
 
-                <div class="comments__grid">
-                    <div class="comments__comment">
-                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">João Fonseca</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="comments-comment_job">CEO da Google Enterprises</p>
-                            <p class="comments-comment__text">Muito prestativo, adorei o design!</p>
-                        </div>
-                    </div>
-                    <div class="comments__comment">
-                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">Júlia Navares</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="comments-comment_job">Designer da Ultimate Team</p>
-                            <p class="comments-comment__text">Trabalho magnífico, vou recomendar!</p>
-                        </div>
-                    </div>
-                    <div class="comments__comment">
-                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">Pedro da Silva</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="comments-comment_job">Engenheiro da SoftwareTech</p>
-                            <p class="comments-comment__text">Muito barato, adorei!</p>
-                        </div>
-                    </div>
-                    <div class="comments__comment">
-                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">Marcos Alves</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="comments-comment_job">CEO do Facebook</p>
-                            <p class="comments-comment__text">Simples e elegante. 10/10.</p>
-                        </div>
-                    </div>
-                    <div class="comments__comment">
-                        <div class="comments-comment__profile"><img class="comments-comment__img" src="assets/img/avatar-imgR.png" alt="avatar"><p class="comment-profile__name">Gabriela dos Anjos</p> <div class="comments-comment__stars">&starf;&starf;&starf;&starf;&starf;</div></p>
-                            <p class="comments-comment_job">Desenvolvedora de Software</p>
-                            <p class="comments-comment__text">Me ajudou demais!</p>
-                        </div>
-                    </div>
+            <div class="comments__grid">
+                <div class="comments__item">
+                    <img class="comments__img" src="assets/img/avatar-imgR.png" alt="avatar">
+                    <p class="comments__name">João Fonseca</p>
+                    <div class="comments__stars">&starf;&starf;&starf;&starf;&starf;</div>
+                    <p class="comments__job">CEO da Google Enterprises</p>
+                    <p class="comments__text">Muito prestativo, adorei o design!</p>
+                </div>
+                <div class="comments__item">
+                    <img class="comments__img" src="assets/img/avatar-imgR.png" alt="avatar">
+                    <p class="comments__name">Júlia Navares</p>
+                    <div class="comments__stars">&starf;&starf;&starf;&starf;&starf;</div>
+                    <p class="comments__job">Designer da Ultimate Team</p>
+                    <p class="comments__text">Trabalho magnífico, vou recomendar!</p>
+                </div>
+                <div class="comments__item">
+                    <img class="comments__img" src="assets/img/avatar-imgR.png" alt="avatar">
+                    <p class="comments__name">Pedro da Silva</p>
+                    <div class="comments__stars">&starf;&starf;&starf;&starf;&starf;</div>
+                    <p class="comments__job">Engenheiro da SoftwareTech</p>
+                    <p class="comments__text">Muito barato, adorei!</p>
+                </div>
+                <div class="comments__item">
+                    <img class="comments__img" src="assets/img/avatar-imgR.png" alt="avatar">
+                    <p class="comments__name">Marcos Alves</p>
+                    <div class="comments__stars">&starf;&starf;&starf;&starf;&starf;</div>
+                    <p class="comments__job">CEO do Facebook</p>
+                    <p class="comments__text">Simples e elegante. 10/10.</p>
+                </div>
+                <div class="comments__item">
+                    <img class="comments__img" src="assets/img/avatar-imgR.png" alt="avatar">
+                    <p class="comments__name">Gabriela dos Anjos</p>
+                    <div class="comments__stars">&starf;&starf;&starf;&starf;&starf;</div>
+                    <p class="comments__job">Desenvolvedora de Software</p>
+                    <p class="comments__text">Me ajudou demais!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact bganimated--purple">
-        <div class="contact__display-block">
+    <section id="contact" class="contact background background--purple">
+        <div class="contact__container">
             <h3 class="contact__title">Contato</h3>
             <form class="contact__form">
-                <div class="contact-form__grid">
-                    <div class="contact__field name">
+                <div class="contact__grid">
+                    <div class="contact__field">
                         <label class="contact__label" for="name">Nome: </label>
                         <input class="contact__input" type="text" name="name" id="name">
                     </div>
 
-                    <div class="contact__field email">
+                    <div class="contact__field">
                         <label class="contact__label" for="email">Email: </label>
                         <input class="contact__input" type="text" name="email" id="email">
                     </div>
 
-                    <div class="contact__field message  full-width">
+                    <div class="contact__field contact__full-width">
                         <label class="contact__label" for="message">Mensagem: </label>
                         <textarea class="contact__input" type="text" name="message" id="message" rows="8"></textarea>
                     </div>
-                    <div class="contact-submit__button">
-                        <button class="contact__button">ENVIAR</button>
-                    </div>
+                       
+                    <button class="contact__button contact__button--submit">ENVIAR</button>
+
                 </div>
             </form>
         </div>
