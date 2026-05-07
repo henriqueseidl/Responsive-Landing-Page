@@ -1,0 +1,204 @@
+@use 'variaveis';
+@use 'mixins';
+@use 'sass:math';
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+};
+
+@include mixins.background("purple", linear-gradient(-45deg, #b300db, #35014a, #9a25d1, #2b004c));
+@include mixins.background("black", linear-gradient(-45deg, #000000, #535353, #000000, #414141));
+
+.header {
+    @include mixins.flexbox;
+    flex-wrap: wrap;
+    width: variaveis.$max-width;
+    height: 20vh;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    &__img {
+        height: auto;
+        max-width: 12rem;
+    };
+};
+
+.welcome {
+    @include mixins.flexbox;
+    height: 80vh;
+
+    &__container {
+        display: block;
+        @include mixins.spacing;
+    };
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+    };
+    &__title {
+        font-size: variaveis.$font-title-size;
+        margin-bottom: variaveis.$std-margin;
+    };
+    &__items {
+        @include mixins.flexbox; 
+        flex-flow: column wrap;
+    };
+    &__text {
+        font-size: variaveis.$font-text-size;
+        margin-bottom: variaveis.$std-margin;
+    };
+    &__img {
+        max-height: 20rem;
+        max-width: variaveis.$max-width;
+    };
+    &__link {
+        color: variaveis.$primary-color;
+        font-size: 1.8em;
+    };
+    @media (min-width: 600px){
+        &__title {
+            font-size: calc(variaveis.$font-title-size * 1.4);
+        }
+        &__text {
+            font-size: calc(variaveis.$font-text-size * 1.4);
+        }
+    };
+    @media (min-width: 855px) {
+        &__items {
+            flex-flow: row nowrap;
+        }
+
+        &__img {
+            grid-column-start: 2;
+        }
+    };
+};
+
+.about-us {
+    @include mixins.flexbox;
+    height: 100vh;
+
+    &__container {
+        @include mixins.spacing;
+    };
+    &__title {
+        font-size: variaveis.$font-title-size;
+    };
+    &__text {
+        font-size: variaveis.$font-text-size;
+    };
+    &__list {
+        margin: calc(variaveis.$std-margin / 2) 0 0 calc(variaveis.$std-margin / 2);
+    };
+    &__item {
+        font-size: variaveis.$font-text-size;
+    };
+    @media (min-width: 600px) {
+        &__title {
+            font-size: calc(variaveis.$font-title-size * 1.4);
+        }
+
+        &__text {
+            font-size: calc(variaveis.$font-text-size * 1.4);
+            margin: 1rem 0;
+        }
+
+        &__item {
+            font-size: 1.3rem;
+        }
+    };
+};
+
+.services {
+    @include mixins.flexbox;
+    height: 100vh;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        font-size: 1.3rem;
+        @include mixins.spacing;
+        gap: 10px;
+    };
+    &__title {
+        grid-column: span 2;
+        justify-self: center;
+        font-size: variaveis.$font-title-size;
+        margin-bottom: variaveis.$std-margin;
+    };
+    &__item-title {
+        color: #d627fd;
+        font-weight: bold;
+        font-size: 1.3rem;
+    };
+    @media (min-width: 600px) {
+        &__title {
+            font-size: calc(variaveis.$font-title-size * 1.4);
+        }
+
+        &__item-title {
+            font-size: calc(variaveis.$font-title-size * 0.8);
+        }
+
+        &__item-text {
+            font-size: calc(variaveis.$font-text-size * 1.4);
+        }
+    };
+};
+
+.comments {
+    @include mixins.flexbox;
+    width: variaveis.$max-width;
+
+    &__container {
+        display: block;
+        margin: auto;
+        padding: variaveis.$std-margin;
+    };
+    &__grid {
+        margin: calc(variaveis.$std-margin * 2.5) 0;
+    };
+};
+
+.contact {
+    @include mixins.flexbox;
+    height: 100vh;
+
+    &__container {
+        display: block;
+        width: min(variaveis.$max-width, variaveis.$container-width);
+        margin: auto;
+    };
+    &__title {
+        font-size: variaveis.$font-title-size;
+        margin: 0 0 variaveis.$std-margin variaveis.$std-margin;
+    };
+    &__form {
+        padding: 0 16px;
+        width: variaveis.$max-width;
+        font-size: calc(variaveis.$font-text-size * 1.4);
+        justify-content: center;
+    };
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        width: min(variaveis.$max-width, variaveis.$container-width);
+        width: variaveis.$max-width;
+        margin: 0 auto;
+    };
+    &__field {
+        display: flex;
+        flex-direction: column;
+    };
+    @media (min-width: 600px) {
+        &__full-width {
+            grid-column: span 2;
+        }
+        &__grid  {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    };
+};

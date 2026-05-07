@@ -1,0 +1,13 @@
+@use 'variaveis';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth
+};
+body {
+    font-family: variaveis.$font-family;
+    font-size: 62.5%;
+    color: variaveis.$primary-color;
+}

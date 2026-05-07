@@ -4,26 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agência Criativa</title>
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <script>
-        const toggle = document.querySelector(".header__menu-toggle");
-        const nav = document.querySelector(".header__nav--mobile")
-
-        toggle.addEventListener("click", () => {
-            nav.classList.toggle("active")
-            toggle.textContent = "X"
-            toggle.style.color = "#000000"
-
-            if (!nav.classList.contains("active")) {
-                toggle.textContent = "☰"
-                toggle.style.color = "#f9f9f9"
-            }
-        });
-    </script>
     
-    <div class="background background--purple">
+    <div class="background-purple">
         <header id="header" class="header">
             <div><img class="header__img" src="assets/img/logo-media.png" srcset=
                 "assets/img/logo-menor.png 139w,
@@ -51,9 +36,25 @@
                 </nav>
             </div>
 
-            <button class="header__menu-toggle" aria-label="Abrir Menu">☰</button>
-
         </header>
+
+        <button class="header__menu-toggle" aria-label="Abrir Menu">☰</button>
+
+        <script>
+            const toggle = document.querySelector(".header__menu-toggle");
+            const nav = document.querySelector(".header__nav--mobile")
+
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("active")
+                toggle.textContent = "X"
+                toggle.style.color = "#000000"
+
+                if (!nav.classList.contains("active")) {
+                    toggle.textContent = "☰"
+                    toggle.style.color = "#f9f9f9"
+                }
+            });
+        </script>
 
         <button class="back-to-top__button"><a class="back-to-top__link" href="#header">&uparrow;</a></button> 
 
@@ -73,7 +74,7 @@
         
     </div>
 
-    <section id="about-us" class="about-us background background--black">
+    <section id="about-us" class="about-us background-black">
         <div class="about-us__container">
             <h1 class="about-us__title">Sobre Nós</h1>
             <p class="about-us__text">A Agência Criativa Web é especializada em Web-Design e atua no mercado brasileiro há 11 anos.</p>
@@ -95,11 +96,11 @@
         </div>
     </section>
 
-    <section id="services" class="services background background--purple">
+    <section id="services" class="services background-purple">
         <div class="services__grid">
             <h2 class="services__title">Serviços</h2>
             <div class="services__item">
-                <h3 class="services__item-title">Desenvolvimento Web</h3>
+                <h3 class="services__item-title">Desenv. Web</h3>
                 <p class="services__item-text">Para aumentar o seu alcance.</p>
             </div>
             <div class="services__item">
@@ -117,7 +118,7 @@
         </div>
     </section>
 
-    <section id="comments" class="comments background background--black">
+    <section id="comments" class="comments background-black">
         <div class="comments__container">
             <h3 class="comments__title">Depoimentos</h3>
 
@@ -161,27 +162,27 @@
         </div>
     </section>
 
-    <section id="contact" class="contact background background--purple">
+    <section id="contact" class="contact background-purple">
         <div class="contact__container">
             <h3 class="contact__title">Contato</h3>
             <form class="contact__form">
                 <div class="contact__grid">
                     <div class="contact__field">
                         <label class="contact__label" for="name">Nome: </label>
-                        <input class="contact__input" type="text" name="name" id="name">
+                        <input class="contact__input" type="text" name="name" id="name" placeholder="Ex: Felipe Santos...">
                     </div>
 
                     <div class="contact__field">
                         <label class="contact__label" for="email">Email: </label>
-                        <input class="contact__input" type="text" name="email" id="email">
+                        <input class="contact__input" type="text" name="email" id="email" placeholder="exemplo@gmail.com">
                     </div>
 
                     <div class="contact__field contact__full-width">
                         <label class="contact__label" for="message">Mensagem: </label>
-                        <textarea class="contact__input" type="text" name="message" id="message" rows="8"></textarea>
+                        <textarea class="contact__input" type="text" name="message" id="message" rows="8" placeholder="Escreva a sua mensagem neste campo"></textarea>
                     </div>
                        
-                    <button class="contact__button contact__button--submit">ENVIAR</button>
+                    <button class="contact__submit-button">ENVIAR</button>
 
                 </div>
             </form>

@@ -1,0 +1,21 @@
+@use 'variaveis';
+
+@mixin flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+};
+
+@mixin background($name, $color) {
+    .background-#{$name} {
+        background: $color;
+        background-size: 400% 400%; /* Large size lets the gradient "move" */
+        animation: gradient 15s ease infinite;
+    }
+};
+
+@mixin spacing {
+    margin: auto;
+    max-width: variaveis.$container-width;
+    padding: variaveis.$std-margin;
+};
